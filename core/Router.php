@@ -16,9 +16,10 @@ class Router{
 
     public function resolve(){
         $path = $this->request->getPath();
+
         $method = $this->request->getMethod();
-        $callback = $this->rutas[$method][$path] ?? false;
         
+        $callback = $this->rutas[$method][$path] ?? false;
         if ($callback === false){
             echo "Not Found!";
             exit;
