@@ -1,0 +1,15 @@
+{
+    "name": "arielbrusaortega/final-project",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "jazzari",
+            "email": "passionjazz@gmail.com"
+        }
+    ],
+    "require": {}
+}
