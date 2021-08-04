@@ -1,6 +1,7 @@
 <?php
 namespace app\models;
 use app\core\DbModel;
+use app\core\Application;
 
 class Usuario extends DbModel{
     const ADMIN_INACTIVO = 0;
@@ -18,9 +19,19 @@ class Usuario extends DbModel{
     }
 
     public function registro(){
-        $this->admin = self::ADMIN_INACTIVO;
-        $this->pass = md5($this->pass);
-        return $this->guardar();
+        // comprueba que el email no exista en la DB
+        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM usuario WHERE correo='$this->correo'");
+        $consulta->execute();
+        $campo = $consulta->fetchObject();
+        if ($campo){
+            echo "Ya existe una cuenta con ese correo";
+
+        } else {
+            // crea la cuenta en la DB
+            $this->admin = self::ADMIN_INACTIVO;
+            $this->pass = md5($this->pass);
+            return $this->guardar();
+        }
     }
 
     public function atributos(): array{

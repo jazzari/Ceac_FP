@@ -14,7 +14,7 @@ class AuthController extends Controller{
         $usuario = new Usuario();
         if ($request->isPost()){
             $usuario->cargarDatos($request->getContenido());
-            
+           
             if ($usuario ->registro()){
                 return 'Success!';
             }
