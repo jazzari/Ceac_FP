@@ -15,19 +15,27 @@ class Request{
 
     }
 
-    public function getMethod(){
+    public function method(){
         return strtolower($_SERVER['REQUEST_METHOD']);
+    }
+
+    public function isGet(){
+        return $this->method() === 'get';
+    }
+
+    public function isPost(){
+        return $this->method() === 'post';
     }
 
     public function getContenido(){
         $contenido = [];
-        if ($this->getMethod() === 'get'){
+        if ($this->method() === 'get'){
             foreach ($_GET as $clave => $valor){
                 // limpia el contenido de $_GET the caracteres inválidos
                 $contenido[$clave] = filter_input(INPUT_GET, $clave, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
-        if ($this->getMethod() === 'post'){
+        if ($this->method() === 'post'){
             foreach ($_POST as $clave => $valor){
                 // limpia el contenido de $_POST the caracteres inválidos
                 $contenido[$clave] = filter_input(INPUT_POST, $clave, FILTER_SANITIZE_SPECIAL_CHARS);
