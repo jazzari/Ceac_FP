@@ -24,6 +24,7 @@ class Router{
         $method = $this->request->getMethod();
 
         $callback = $this->routes[$method][$path] ?? false;
+        
         if ($callback === false){
             return $this->renderVista("_404");
         }
@@ -31,15 +32,19 @@ class Router{
         if (is_string($callback)){
             return $this->renderVista($callback);
         }
-
+       
+        // comprueba si el callback es un array y crea una instancia del controlador
+        if (is_array($callback)){
+            $callback[0] = new $callback[0]();
+        }
         return call_user_func($callback);
     }
 
-    public function renderVista($vista){
+    public function renderVista($vista, $params = []){
        
         $contenidoLayout = $this->contenidoLayout();
         
-        $contenidoVista = $this->renderSoloVista($vista);
+        $contenidoVista = $this->renderSoloVista($vista, $params);
        
         return str_replace('{{contenido}}', $contenidoVista, $contenidoLayout);
     }
@@ -58,7 +63,11 @@ class Router{
         return ob_get_clean();
     }
 
-    protected function renderSoloVista($vista){
+    protected function renderSoloVista($vista, $params){
+        foreach ($params as $clave => $valor){
+            $$clave = $valor;
+        }
+        
          // pone la vista en el buffer
         ob_start();
         include_once Application::$ROOT_DIR . "/views/$vista.php";
