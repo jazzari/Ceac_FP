@@ -14,10 +14,7 @@ class AuthController extends Controller{
         $registroModel = new RegistroModel();
         if ($request->isPost()){
             $registroModel->cargarDatos($request->getContenido());
-            echo '<pre>';
-var_dump($registroModel);
-echo '</pre>';
-exit;
+        
             if ($registroModel ->registro()){
                 return 'Success!';
             }
