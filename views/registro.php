@@ -9,12 +9,12 @@
                   <h5 class="card-title text-center">Cree una cuenta</h5>
                   <form action="" class="row g-3" data-form="save" method="POST">
                     <div class="mb-3">
-                        <label class="form-label" for="usuario">Usuario</label>
+                        <label class="form-label" for="user">Usuario</label>
                         <input
                           class="form-control"
                           type="text"
-                          id="usuario"
-                          name="usuario" required autofocus
+                          id="user"
+                          name="user" required autofocus
                         />
                         <div class="valid-feedback">
                           Looks good!
@@ -35,15 +35,15 @@
                                 </div>
                     </div>
                     <div class="col-md-6">
-                                <label class="form-label" for="email">Email</label>
-                                <input class="form-control" type="email" id="email" name="email" required />
+                                <label class="form-label" for="correo">Correo</label>
+                                <input class="form-control" type="email" id="correo" name="correo" required />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label" for="contraseña">Contraseña</label>
-                                <input class="form-control" type="password" id="contraseña" name="contraseña" required />
+                                <label class="form-label" for="pass">Contraseña</label>
+                                <input class="form-control" type="password" id="pass" name="pass" required />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
