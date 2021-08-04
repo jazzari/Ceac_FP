@@ -6,10 +6,11 @@ use app\core\Application;
 $app = new Application(dirname(__DIR__));
 
 
-$app->router->get('/home', function(){
-    echo "Welcome";
-});
+$app->router->get('/home', 'home');
 $app->router->get('/contacto', 'contacto');
+$app->router->post('/contacto', function(){
+    return "Handling submitted data";
+});
 
 
 $app->run();

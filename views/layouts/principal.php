@@ -22,7 +22,10 @@
   </head>
   <body class="d-flex flex-column vh-100">
     <?php include_once '../views/layouts/navbar.php'; ?>
-    {{contenido}}
+
+    <div class="container">
+      {{contenido}}
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

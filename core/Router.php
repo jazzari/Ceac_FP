@@ -14,6 +14,10 @@ class Router{
         $this->routes['get'][$path] = $callback;
     }
 
+    public function post($path, $callback){
+        $this->routes['post'][$path] = $callback;
+    }
+
     public function resolve(){ 
         $path = $this->request->getPath();
 
@@ -21,7 +25,7 @@ class Router{
 
         $callback = $this->routes[$method][$path] ?? false;
         if ($callback === false){
-            return "Not Found!";
+            return $this->renderVista("_404");
         }
         // comprueba si el callback es un string y llama a la vista
         if (is_string($callback)){
@@ -36,6 +40,13 @@ class Router{
         $contenidoLayout = $this->contenidoLayout();
         
         $contenidoVista = $this->renderSoloVista($vista);
+       
+        return str_replace('{{contenido}}', $contenidoVista, $contenidoLayout);
+    }
+
+    public function renderContenido($contenidoVista){
+       
+        $contenidoLayout = $this->contenidoLayout();
        
         return str_replace('{{contenido}}', $contenidoVista, $contenidoLayout);
     }

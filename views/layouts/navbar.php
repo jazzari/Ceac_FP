@@ -11,10 +11,13 @@
                 <div class="navbar-nav ms-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../home.php">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../vistas/servicios.php">Servicios</a>
+                            <a class="nav-link" href="../vistas/servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacto">Contacto</a>
                         </li>
                         
                 </div>
