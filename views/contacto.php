@@ -10,8 +10,8 @@
     <input type="email" class="form-control" id="email" name="email">
   </div>
   <div class="mb-3">
-    <label for="contenido" class="form-label">Contenido</label>
-    <textarea class="form-control" id="contenido" name="contenido"></textarea>
+    <label for="mensaje" class="form-label">Mensaje</label>
+    <textarea class="form-control" id="mensaje" name="mensaje"></textarea>
   </div>
   
   <button type="submit" class="btn btn-primary">Enviar</button>

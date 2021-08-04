@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 use app\core\Application;
+use app\core\Request;
 use app\core\Controller;
 
 
@@ -17,8 +18,12 @@ class PrincipalController extends Controller{
         return $this->render('contacto');
     }
 
-    public  function postContacto(){
-        return 'Handling submitted data';
+    public  function postContacto(Request $request){
+        $contenido = $request->getContenido();
+        echo '<pre>';
+var_dump($contenido);
+echo '</pre>';
+exit;
     }
 }
 ?>

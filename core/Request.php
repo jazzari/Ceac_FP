@@ -18,5 +18,23 @@ class Request{
     public function getMethod(){
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
+
+    public function getContenido(){
+        $contenido = [];
+        if ($this->getMethod() === 'get'){
+            foreach ($_GET as $clave => $valor){
+                // limpia el contenido de $_GET the caracteres inválidos
+                $contenido[$clave] = filter_input(INPUT_GET, $clave, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+        if ($this->getMethod() === 'post'){
+            foreach ($_POST as $clave => $valor){
+                // limpia el contenido de $_POST the caracteres inválidos
+                $contenido[$clave] = filter_input(INPUT_POST, $clave, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+        return $contenido;
+    }
 }
 ?>
