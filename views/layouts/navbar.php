@@ -1,3 +1,7 @@
+<?php
+use app\core\Application;
+
+?>
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,9 +24,9 @@
                             <a class="nav-link" href="/contacto">Contacto</a>
                     </ul>
                 </div>
+                <?php if (Application::esVisitante()): ?>
                 <div class="navbar-nav ms-auto">
                     <ul class="navbar-nav">
-                    </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login</a>
                         </li>
@@ -31,6 +35,15 @@
                         </li>
                     </ul>
                 </div>
+                <?php else: ?>
+                <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Bienvenido 
+                            (Logout)
+                            </a>
+                        </li>
+                </ul>
+                <?php endif; ?>
             </div>
         </div>
     </nav>

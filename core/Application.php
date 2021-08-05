@@ -57,5 +57,9 @@ class Application{
     public static function esVisitante(){
         return !self::$app->user;
     }
+
+    public static function mostrarNombre(){
+        return $user->$nombre.' '.$apellidos;
+    }
 }
 ?>

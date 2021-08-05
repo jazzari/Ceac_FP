@@ -44,5 +44,7 @@ class Usuario extends DbModel{
     public function atributos(): array{
         return ['user', 'nombre', 'apellidos', 'correo', 'pass', 'admin'];
     }
+
+    
 }
 ?>
