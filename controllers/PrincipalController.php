@@ -20,10 +20,7 @@ class PrincipalController extends Controller{
 
     public  function postContacto(Request $request){
         $contenido = $request->getContenido();
-        echo '<pre>';
-var_dump($contenido);
-echo '</pre>';
-exit;
+        
     }
 }
 ?>

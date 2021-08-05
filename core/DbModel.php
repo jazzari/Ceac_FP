@@ -10,6 +10,8 @@ abstract class DbModel extends Model{
 
     abstract public function atributos(): array;
 
+    abstract public function clavePrimaria(): string;
+
     public function guardar(){
         $tableName = $this->tableName();
         $atributos = $this->atributos();

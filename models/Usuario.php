@@ -18,6 +18,10 @@ class Usuario extends DbModel{
         return  'usuario';
     }
 
+    public function clavePrimaria(): string{
+        return 'usuario_id';
+    }
+
     public function registro(){
         // comprueba que el email no exista en la DB
         $consulta = Application::$app->db->pdo->prepare("SELECT * FROM usuario WHERE correo='$this->correo'");

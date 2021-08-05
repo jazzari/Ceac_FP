@@ -1,6 +1,7 @@
 <?php
 namespace app\models;
 use app\core\Model;
+use app\core\Application;
 
 class Login extends Model{
     public string $correo = '';
@@ -23,10 +24,7 @@ class Login extends Model{
                 </script>";
             return false;
         }
-        echo '<pre>';
-var_dump($usuario);
-echo '</pre>';
-exit;
+        
         return Application::$app->login($usuario);
     }
 }
