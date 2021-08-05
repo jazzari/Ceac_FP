@@ -10,16 +10,16 @@
                         <h5 class="card-title text-center">Iniciar Sesión</h5>
                         <form action="" class="row g-3" data-form="save" method="POST">
                             <div class="mb-3">
-                                <label class="form-label" for="usuario">Usuario</label>
-                                <input class="form-control" type="text" id="usuario" name="usuario" required
+                                <label class="form-label" for="correo">Correo</label>
+                                <input class="form-control" type="text" id="correo" name="correo" required
                                     autofocus />
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="contraseña">Contraseña</label>
-                                <input class="form-control" type="password" id="contraseña" name="contraseña"
+                                <label class="form-label" for="pass">Contraseña</label>
+                                <input class="form-control" type="password" id="pass" name="pass"
                                     required />
                                 <div class="valid-feedback">
                                     Looks good!

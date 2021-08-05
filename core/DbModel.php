@@ -1,9 +1,12 @@
 <?php
+
 namespace app\core;
 use app\core\Model;
+use app\models\Usuario;
 
 abstract class DbModel extends Model{
-    abstract public function tableName(): string;
+    public Usuario $usuario;
+    // abstract public function tableName(): string;
 
     abstract public function atributos(): array;
 
@@ -18,6 +21,25 @@ abstract class DbModel extends Model{
         }
         $consulta->execute();
         return true;
+    }
+
+    public static function findOne($where){
+        $usuario = new Usuario();
+        $tableName = $usuario->tableName();
+        
+
+        $sql = implode('AND ', array_map(
+            function ($v, $k) { return sprintf("%s = '%s'", $k, $v); },
+            $where,
+            array_keys($where)
+        ));
+        
+        $consulta = self::preparar("SELECT * FROM $tableName WHERE $sql");
+        
+        $consulta->execute(); 
+        
+        return $consulta->fetchObject(static::class);
+  
     }
 
     public static function preparar($sql){
