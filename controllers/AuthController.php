@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 use app\core\Controller;
+use app\core\Application;
 use app\core\Request;
 use app\models\Usuario;
 use app\models\Login;
@@ -45,6 +46,11 @@ class AuthController extends Controller{
         return $this->render('registro', [
             'model' => $usuario
         ]);
+    }
+
+    public function logout(Request $request){
+        Application::$app->logout();
+        header('Location: /home');
     }
 }
 ?>

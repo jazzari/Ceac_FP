@@ -31,6 +31,7 @@ $app->router->post('/login', [AuthController::class, 'login']);
 $app->router->get('/registro', [AuthController::class, 'registro']);
 $app->router->post('/registro', [AuthController::class, 'registro']);
 
+$app->router->get('/logout', [AuthController::class, 'logout']);
 
 $app->run();
 ?>

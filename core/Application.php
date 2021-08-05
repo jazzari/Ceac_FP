@@ -6,7 +6,7 @@ use app\models\Usuario;
 class Application{
     public static string $ROOT_DIR;
     // public string $userClass;
-    public Usuario $user;
+    public ?Usuario $user;
     public Router $router;
     public Request $request;
     public Database $db;
@@ -32,7 +32,7 @@ class Application{
             
             $this->user = (new Usuario() )->findOne([$clavePrimaria => $valorClavePrimaria]);
         } else {
-            // $this->user = null;
+            $this->user = null;
         }
         
     }
@@ -58,8 +58,5 @@ class Application{
         return !self::$app->user;
     }
 
-    public static function mostrarNombre(){
-        return $user->$nombre.' '.$apellidos;
-    }
 }
 ?>

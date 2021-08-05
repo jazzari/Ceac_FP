@@ -28,7 +28,7 @@ use app\core\Application;
                 <div class="navbar-nav ms-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
+                            <a class="nav-link" href="/login">Iniciar Sesion</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/registro">Registro</a>
@@ -38,9 +38,7 @@ use app\core\Application;
                 <?php else: ?>
                 <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">Bienvenido 
-                            (Logout)
-                            </a>
+                            <a class="nav-link" href="/logout">(Cerrar Sesion)</a>
                         </li>
                 </ul>
                 <?php endif; ?>
