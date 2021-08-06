@@ -63,5 +63,14 @@ class Application{
         return !self::$app->user;
     }
 
+    public static function esAdmin(){
+        $admin = self::$app->user->admin;
+        if ($admin === 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 ?>

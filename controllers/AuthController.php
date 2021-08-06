@@ -60,5 +60,9 @@ class AuthController extends Controller{
     public function perfil(){
         return $this->render('perfil');
     }
+
+    public function panelAdmin(){
+        return $this->render('panelAdmin');
+    }
 }
 ?>

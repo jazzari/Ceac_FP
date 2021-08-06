@@ -1,7 +1,7 @@
 
 
 <div class="container mt-2">
-    <h5 class="text-end">Alumno: Ariel Brusa Ortega - N: 9337099</h5>
+    <h6 class="text-end">Alumno: Ariel Brusa Ortega - N: 9337099</h6>
     <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">

@@ -33,6 +33,7 @@ $app->router->post('/registro', [AuthController::class, 'registro']);
 
 $app->router->get('/logout', [AuthController::class, 'logout']);
 $app->router->get('/perfil', [AuthController::class, 'perfil']);
+$app->router->get('/panelAdmin', [AuthController::class, 'panelAdmin']);
 
 $app->run();
 ?>

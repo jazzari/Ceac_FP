@@ -4,7 +4,7 @@ use app\core\Application;
 ?>
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/home">Soluciones Integrales SL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -35,6 +35,22 @@ use app\core\Application;
                         </li>
                     </ul>
                 </div>
+                <?php elseif (Application::esAdmin()): ?>
+                <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/perfil">Mi Cuenta</a>
+                        </li>
+                </ul>
+                <ul class="navbar-nav ms-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/panelAdmin">Panel Admin</a>
+                        </li>
+                </ul>
+                <ul class="navbar-nav ms-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Cerrar Sesion</a>
+                        </li>
+                </ul>
                 <?php else: ?>
                 <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
