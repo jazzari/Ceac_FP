@@ -1,7 +1,7 @@
 <?php
 use app\core\Application;
 use app\controllers\PrincipalController;
-use app\controllers\AuthController;
+use app\controllers\UsuarioController;
 use app\models\Usuario;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -25,15 +25,15 @@ $app->router->get('/home', [PrincipalController::class, 'home']);
 $app->router->get('/contacto', [PrincipalController::class, 'contacto']);
 $app->router->post('/contacto', [PrincipalController::class, 'postContacto']);
 
-$app->router->get('/login', [AuthController::class, 'login']);
-$app->router->post('/login', [AuthController::class, 'login']);
+$app->router->get('/login', [UsuarioController::class, 'login']);
+$app->router->post('/login', [UsuarioController::class, 'login']);
 
-$app->router->get('/registro', [AuthController::class, 'registro']);
-$app->router->post('/registro', [AuthController::class, 'registro']);
+$app->router->get('/registro', [UsuarioController::class, 'registro']);
+$app->router->post('/registro', [UsuarioController::class, 'registro']);
 
-$app->router->get('/logout', [AuthController::class, 'logout']);
-$app->router->get('/perfil', [AuthController::class, 'perfil']);
-$app->router->get('/panelAdmin', [AuthController::class, 'panelAdmin']);
+$app->router->get('/logout', [UsuarioController::class, 'logout']);
+$app->router->get('/perfil', [UsuarioController::class, 'perfil']);
+$app->router->get('/panelAdmin', [UsuarioController::class, 'panelAdmin']);
 
 $app->run();
 ?>

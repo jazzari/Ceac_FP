@@ -7,7 +7,7 @@ use app\models\Usuario;
 use app\models\Login;
 use app\core\middlewares\AuthMiddleware;
 
-class AuthController extends Controller{
+class UsuarioController extends Controller{
 
     public function __construct(){
         $this->registroMiddleware(new AuthMiddleware(['perfil']));
