@@ -1,9 +1,11 @@
 <?php
 
 namespace app\core;
+use app\core\Controller;
 
 class Router{
     public Request $request;
+    public Controller $controller;
     protected array $routes = [];
 
     public function __construct(Request $request){
@@ -35,7 +37,14 @@ class Router{
        
         // comprueba si el callback es un array y crea una instancia del controlador
         if (is_array($callback)){
-            $callback[0] = new $callback[0]();
+            // $callback[0] = new $callback[0]();
+            $controller = new $callback[0]();
+            Application::$app->controller = $controller;
+            $controller->accion = $callback[1];
+            $callback[0] = $controller;
+            foreach ($controller->getMiddlewares() as $middleware){
+                $middleware->execute();
+            }
         }
         return call_user_func($callback, $this->request);
     }

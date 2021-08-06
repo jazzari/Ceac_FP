@@ -31,14 +31,19 @@ use app\core\Application;
                             <a class="nav-link" href="/login">Iniciar Sesion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/registro">Registro</a>
+                            <a class="nav-link" href="/registro">Registrarse</a>
                         </li>
                     </ul>
                 </div>
                 <?php else: ?>
                 <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">(Cerrar Sesion)</a>
+                            <a class="nav-link" href="/perfil">Mi Cuenta</a>
+                        </li>
+                </ul>
+                <ul class="navbar-nav ms-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Cerrar Sesion</a>
                         </li>
                 </ul>
                 <?php endif; ?>

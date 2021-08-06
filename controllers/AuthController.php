@@ -5,8 +5,13 @@ use app\core\Application;
 use app\core\Request;
 use app\models\Usuario;
 use app\models\Login;
+use app\core\middlewares\AuthMiddleware;
 
 class AuthController extends Controller{
+
+    public function __construct(){
+        $this->registroMiddleware(new AuthMiddleware(['perfil']));
+    }
 
     public function login(Request $request){
         $login = new Login();
@@ -51,6 +56,10 @@ class AuthController extends Controller{
     public function logout(Request $request){
         Application::$app->logout();
         header('Location: /home');
+    }
+
+    public function perfil(){
+        return $this->render('perfil');
     }
 }
 ?>
