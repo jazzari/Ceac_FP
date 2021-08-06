@@ -5,7 +5,6 @@ use app\models\Usuario;
 
 class Application{
     public static string $ROOT_DIR;
-    // public string $userClass;
     public ?Usuario $user;
     public Router $router;
     public Request $request;
@@ -45,7 +44,13 @@ class Application{
         $this->usuario = $usuario;
         $clavePrimaria = $usuario->clavePrimaria();
         $valorClavePrimaria = $usuario->{$clavePrimaria};
+        $user = $usuario->findOne([$clavePrimaria => $valorClavePrimaria]);
+        $arrayUsuario = (array)$user;
         $this->sesion->set('usuario', $valorClavePrimaria);
+        $this->sesion->set('nombre', $arrayUsuario['nombre']);
+        $this->sesion->set('user', $arrayUsuario['user']);
+        $this->sesion->set('apellidos', $arrayUsuario['apellidos']);
+        $this->sesion->set('correo', $arrayUsuario['correo']);
         return true;
     }
 

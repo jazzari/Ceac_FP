@@ -41,7 +41,6 @@ class AuthController extends Controller{
                 alert('Gracias por registarse!');
                 window.location.href='/home';
                 </script>";
-                // return 'Success!';
             }
 
             return $this->render('registro', [

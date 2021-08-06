@@ -1,6 +1,9 @@
 <?php
 use app\core\Application;
-
+// echo '<pre>';
+// var_dump($usuario);
+// echo '</pre>';
+// exit;
 ?>
 
 <!DOCTYPE html>
