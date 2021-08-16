@@ -1,2 +1,2 @@
 <?php ?>
-<h1>Not Found!</h1>
+<h1>No se encuentra la página solicitada!</h1>

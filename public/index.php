@@ -2,6 +2,7 @@
 use app\core\Application;
 use app\controllers\PrincipalController;
 use app\controllers\UsuarioController;
+use app\controllers\AseguradoraController;
 use app\models\Usuario;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -34,6 +35,11 @@ $app->router->post('/registro', [UsuarioController::class, 'registro']);
 $app->router->get('/logout', [UsuarioController::class, 'logout']);
 $app->router->get('/perfil', [UsuarioController::class, 'perfil']);
 $app->router->get('/panelAdmin', [UsuarioController::class, 'panelAdmin']);
+
+$app->router->get('/regAseguradora', [AseguradoraController::class, 'regAseguradora']);
+$app->router->post('/regAseguradora', [AseguradoraController::class, 'regAseguradora']);
+$app->router->get('/listarAseguradora', [AseguradoraController::class, 'listarAseguradora']);
+
 
 $app->run();
 ?>

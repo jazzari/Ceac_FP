@@ -41,7 +41,6 @@ class Request{
                 $contenido[$clave] = filter_input(INPUT_POST, $clave, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
-
         return $contenido;
     }
 }

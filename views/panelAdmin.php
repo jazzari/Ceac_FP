@@ -6,6 +6,10 @@
             <div class="card pt-3">
                 <div class="card-body row">
                     <div class="col">
+                    <a class="nav-link" href="/regAseguradora">Registrar Aseguradora</a>
+                    </div>
+                    <div class="col">
+                    <a class="nav-link" href="/listarAseguradora">Listar Aseguradoras</a>
                     </div>
                 </div>
             </div>

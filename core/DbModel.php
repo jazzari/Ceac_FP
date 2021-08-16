@@ -28,7 +28,6 @@ abstract class DbModel extends Model{
     public static function findOne($where){
         $usuario = new Usuario();
         $tableName = $usuario->tableName();
-        
 
         $sql = implode('AND ', array_map(
             function ($v, $k) { return sprintf("%s = '%s'", $k, $v); },
@@ -41,8 +40,8 @@ abstract class DbModel extends Model{
         $consulta->execute(); 
         
         return $consulta->fetchObject(static::class);
-  
     }
+    
 
     public static function preparar($sql){
         return Application::$app->db->pdo->prepare($sql);

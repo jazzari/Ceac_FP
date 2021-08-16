@@ -24,8 +24,9 @@ class Router{
         $path = $this->request->getPath();
 
         $method = $this->request->method();
-
+        
         $callback = $this->routes[$method][$path] ?? false;
+       
         
         if ($callback === false){
             return $this->renderVista("_404");
@@ -37,7 +38,6 @@ class Router{
        
         // comprueba si el callback es un array y crea una instancia del controlador
         if (is_array($callback)){
-            // $callback[0] = new $callback[0]();
             $controller = new $callback[0]();
             Application::$app->controller = $controller;
             $controller->accion = $callback[1];
