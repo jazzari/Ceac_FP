@@ -15,6 +15,15 @@
                     <a class="nav-link" href="/listarUsuarios">Listar Usuarios</a>
                     </div>
                 </div>
+                <div class="card-body row">
+                    <div class="col">
+                    <a class="nav-link" href="/regAsegurado">Registrar Asegurado</a>
+                    </div>
+                    <div class="col">
+                    <a class="nav-link" href="/listarAsegurados">Listar Asegurados</a>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>

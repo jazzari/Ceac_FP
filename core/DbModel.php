@@ -3,9 +3,13 @@
 namespace app\core;
 use app\core\Model;
 use app\models\Usuario;
+use app\models\Aseguradora;
+
 
 abstract class DbModel extends Model{
+    public string $modelo = '';
     public Usuario $usuario;
+    public Aseguradora $aseguradora;
     // abstract public function tableName(): string;
 
     abstract public function atributos(): array;
@@ -25,7 +29,7 @@ abstract class DbModel extends Model{
         return true;
     }
 
-    public static function findOne($where){
+    public function findOne($where){
         $usuario = new Usuario();
         $tableName = $usuario->tableName();
 
