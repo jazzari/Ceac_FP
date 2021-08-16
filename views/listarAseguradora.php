@@ -12,13 +12,13 @@
                 </div>
                 <div class="card-body row">
                     <div class="col-md-3">  
-                        <h5 class="card-subtitle mb-2 text-muted text-center">Nombre</h5>
+                        <h5 class="card-subtitle mb-2 text-muted">Nombre</h5>
                     </div>
                     <div class="col-md-3"> 
-                        <h5 class="card-subtitle mb-2 text-muted text-center">Contacto</h5>
+                        <h5 class="card-subtitle mb-2 text-muted ">Contacto</h5>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <h5 class="card-subtitle mb-2 text-muted text-center">Email</h5>
+                        <h5 class="card-subtitle mb-2 text-muted">Email</h5>
                     </div>
                 </div>
 

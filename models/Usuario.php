@@ -24,10 +24,8 @@ class Usuario extends DbModel{
 
     public function registro(){
         // comprueba que el email no exista en la DB
-        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM usuario WHERE correo='$this->correo'");
-        $consulta->execute();
-        $campo = $consulta->fetchObject();
-        if ($campo){
+        $usuario = Usuario::findOne(['correo' => $this->correo]);
+        if ($usuario){
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"">
                  Ya existe una cuenta con ese correo
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

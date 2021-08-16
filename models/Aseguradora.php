@@ -42,11 +42,7 @@ class Aseguradora extends DbModel{
     }
 
     public function listarAseguradora(){
-        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM aseguradora");
-        
-        $consulta->execute();
-        $lista = $consulta->fetchAll();
-        
+        $lista = Aseguradora::findAll('aseguradora');
         return $lista;
     }
 

@@ -41,6 +41,12 @@ abstract class DbModel extends Model{
         
         return $consulta->fetchObject(static::class);
     }
+
+    public static function findAll($modelo){
+        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM $modelo");
+        $consulta->execute();
+        return $lista = $consulta->fetchAll();
+    }
     
 
     public static function preparar($sql){
