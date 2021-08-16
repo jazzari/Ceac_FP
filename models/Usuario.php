@@ -43,6 +43,11 @@ class Usuario extends DbModel{
         return ['user', 'nombre', 'apellidos', 'correo', 'pass', 'admin'];
     }
 
+    public function listarUsuarios(){
+        $lista = Usuario::findAll('usuario');
+        return $lista;
+    }
+
     
 }
 ?>

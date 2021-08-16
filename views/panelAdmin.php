@@ -9,7 +9,10 @@
                     <a class="nav-link" href="/regAseguradora">Registrar Aseguradora</a>
                     </div>
                     <div class="col">
-                    <a class="nav-link" href="/listarAseguradora">Listar Aseguradoras</a>
+                    <a class="nav-link" href="/listarAseguradoras">Listar Aseguradoras</a>
+                    </div>
+                    <div class="col">
+                    <a class="nav-link" href="/listarUsuarios">Listar Usuarios</a>
                     </div>
                 </div>
             </div>

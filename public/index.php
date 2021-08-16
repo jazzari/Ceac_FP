@@ -36,9 +36,11 @@ $app->router->get('/logout', [UsuarioController::class, 'logout']);
 $app->router->get('/perfil', [UsuarioController::class, 'perfil']);
 $app->router->get('/panelAdmin', [UsuarioController::class, 'panelAdmin']);
 
+$app->router->get('/listarUsuarios', [UsuarioController::class, 'listarUsuarios']);
+
 $app->router->get('/regAseguradora', [AseguradoraController::class, 'regAseguradora']);
 $app->router->post('/regAseguradora', [AseguradoraController::class, 'regAseguradora']);
-$app->router->get('/listarAseguradora', [AseguradoraController::class, 'listarAseguradora']);
+$app->router->get('/listarAseguradoras', [AseguradoraController::class, 'listarAseguradoras']);
 
 
 $app->run();

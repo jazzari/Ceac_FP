@@ -64,5 +64,13 @@ class UsuarioController extends Controller{
     public function panelAdmin(){
         return $this->render('panelAdmin');
     }
+
+    public function listarUsuarios(){
+        $usuario = new Usuario();
+        $listaUsuarios = $usuario->listarUsuarios();
+        
+        return $this->render('listarUsuarios', compact('listaUsuarios'));
+    }
+
 }
 ?>

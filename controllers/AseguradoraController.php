@@ -35,11 +35,11 @@ class AseguradoraController extends Controller{
         ]);
     }
 
-    public function listarAseguradora(){
+    public function listarAseguradoras(){
         $aseguradora = new Aseguradora();
-        $listaAseg = $aseguradora->listarAseguradora();
+        $listaAseg = $aseguradora->listarAseguradoras();
         
-        return $this->render('listarAseguradora', compact('listaAseg'));
+        return $this->render('listarAseguradoras', compact('listaAseg'));
     }
 
 }

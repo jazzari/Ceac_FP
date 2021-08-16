@@ -41,7 +41,7 @@ class Aseguradora extends DbModel{
         }
     }
 
-    public function listarAseguradora(){
+    public function listarAseguradoras(){
         $lista = Aseguradora::findAll('aseguradora');
         return $lista;
     }
