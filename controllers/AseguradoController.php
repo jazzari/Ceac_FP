@@ -38,9 +38,11 @@ class AseguradoController extends Controller{
 
     public function listarAsegurados(){
         $asegurado = new Asegurado();
+        $aseguradora = new Aseguradora();
+        $listAseg = (array)$aseguradora->findAll('aseguradora');
         $listaAsegurados = $asegurado->listarAsegurados();
         
-        return $this->render('listarAsegurados', compact('listaAsegurados'));
+        return $this->render('listarAsegurados', compact('listaAsegurados', 'listAseg'));
     }
 
 }
