@@ -16,7 +16,7 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="card-title text-center">Registro de Asegurados</h5>
-                        <form action="" class="row g-3" data-form="save" method="GET">
+                        <form action="" class="row g-3" data-form="save" method="POST">
                             <div>
                                 <label class="form-label" for="nombre">Nombre</label>
                                 <input class="form-control" type="text" id="nombre" name="nombre" required autofocus />
