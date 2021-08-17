@@ -4,7 +4,7 @@
 <div class="container justify-content-center align-items-center mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="mb-3">Mi Cuenta</h1>
+            <h1 class="mb-3 text-center">Mi Cuenta</h1>
             <div class="card ">
                 <div class="card-header text-center fw-bold">
                     <?php print_r($_SESSION['user']) ?>
