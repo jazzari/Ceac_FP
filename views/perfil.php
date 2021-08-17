@@ -29,10 +29,10 @@
                         </ul>
                     </div>
                     <div class="d-grid gap-2 mb-3">
-                        <a href="./averia.php" class="btn btn-outline-primary">Registrar Avería</a>
+                        <a href="/regAveria" class="btn btn-outline-primary">Registrar Avería</a>
                     </div>
                     <div class="d-grid gap-2 mb-3">
-                        <a href="./list-averia.php" class="btn btn-outline-primary">Listar Averías</a>
+                        <a href="/listarAverias" class="btn btn-outline-primary">Listar Averías</a>
                     </div>
                     
                     <div class="d-grid gap-3 d-md-flex justify-content-md-end">

@@ -2,13 +2,15 @@
 namespace app\models;
 use app\core\Model;
 use app\core\Application;
+use app\models\Usuario;
 
 class Login extends Model{
     public string $correo = '';
     public string $pass = '';
 
     public function login(){
-        $usuario = Usuario::findOne(['correo' => $this->correo]);
+        $usuario = new Usuario();
+        $usuario = $usuario->findOne(['correo' => $this->correo]);
         if (!$usuario){
             // usuario no existe (ERROR)
             echo "<script type=\"text/javascript\">
