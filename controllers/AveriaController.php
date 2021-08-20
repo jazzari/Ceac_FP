@@ -45,9 +45,14 @@ class AveriaController extends Controller{
         $aseguradora = new Aseguradora();
         $listAveria = (array)$averia->findAll('averia');
         $listAseguradora = (array)$aseguradora->findAll('aseguradora');
-        $listaAsegurados = $asegurado->listarAsegurados();
+        // $listAseg = $asegurado->getAsegurados(12);
+//         echo '<pre>';
+// var_dump($listAseg);
+// echo '</pre>';
+// exit;
+        // $listaAsegurados = $asegurado->listarAsegurados();
         
-        return $this->render('listarAveria', compact('listaAsegurados', 'listAseguradora', 'listAveria'));
+        return $this->render('listarAveria', compact('listAseguradora', 'listAveria'));
     }
 
 }

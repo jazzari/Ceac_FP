@@ -45,5 +45,13 @@ class Asegurado extends DbModel{
         return $lista;
     }
 
+    public function getAsegurados($aseguradora=0){
+        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM asegurado WHERE aseguradora_id=$aseguradora");
+        $consulta->execute();
+        $lista = $consulta->fetchAll();
+        
+        return $lista;
+    }
+
 }
 ?>

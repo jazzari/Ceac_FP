@@ -45,5 +45,16 @@ class AseguradoController extends Controller{
         return $this->render('listarAsegurados', compact('listaAsegurados', 'listAseg'));
     }
 
+    public function getAsegurados(Request $request){
+        header('Content-Type: application/json');
+        $consulta = $request->getContenido();
+        $aseguradora = $consulta['aseguradora'];
+        
+        $asegurado = new Asegurado();
+        $asegurados = $asegurado->getAsegurados($aseguradora);
+
+        return json_encode($asegurados, JSON_PRETTY_PRINT);
+    }
+
 }
 ?>

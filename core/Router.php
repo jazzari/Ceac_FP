@@ -26,8 +26,6 @@ class Router{
         $method = $this->request->method();
         
         $callback = $this->routes[$method][$path] ?? false;
-       
-        
         if ($callback === false){
             return $this->renderVista("_404");
         }

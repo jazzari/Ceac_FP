@@ -1,9 +1,12 @@
 <?php
+
 // echo '<pre>';
-// var_dump($listAsegurado);
+// var_dump($aseguradora);
 // echo '</pre>';
 // exit;
+
 ?>
+
 
 <div class="container">
 
@@ -19,8 +22,8 @@
                         <form action="" class="row g-3" data-form="save" method="GET">
                             <div class="col">
 
-                                <label class="form-label" for="aseguradora_id">Aseguradora</label>
-                                <select class="form-select mb-3" id="aseguradora_id" name="aseguradora_id"
+                                <label class="form-label" for="aseguradora">Aseguradora</label>
+                                <select class="form-select mb-3" id="aseguradora" name="aseguradora_id"
                                     aria-label="Floating label select example" required autofocus>
                                     <option selected>Seleccione Aseguradora</option>
                                     <?php foreach($listAseguradora as $aseguradora){ ?>
@@ -31,14 +34,11 @@
                                 </select>
                                 <div class="col">
 
-                                    <label class="form-label" for="aseguradora_id">Asegurado</label>
-                                    <select class="form-select mb-3" id="aseguradora_id" name="aseguradora_id"
+                                    <label class="form-label" for="asegurado_id">Asegurado</label>
+                                    <select class="form-select mb-3" id="asegurado_id" name="asegurado_id"
                                         aria-label="Floating label select example">
                                         <option selected>Seleccione Asegurado</option>
-                                        <?php foreach($listAseg as $aseguradora){ ?>
-                                        <option value="<?php print_r($aseguradora['aseguradora_id']) ?>">
-                                            <?php print_r($aseguradora['nombre']) ?></option>
-                                        <?php } ?>
+                                        
 
                                     </select>
                                     <div>
@@ -77,3 +77,37 @@
 
 
 </div>
+
+    <!-- Script -->
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            $('select[name="aseguradora_id"]').on('change', function(){
+                var aseguradora_id = $(this).val();
+                
+                $('#asegurado_id').find('option').not(':first').remove();
+                var url = '/getAsegurados'+'('+aseguradora_id+')';
+                $.ajax({
+                    url: '/getAsegurados',
+                    type:'GET',
+                    data: {
+                        aseguradora: aseguradora_id
+                    },
+                    dataType: 'text',
+                    success: function(result){
+                      
+                        let res = JSON.parse(result);
+                        for (const asegurado in res) {
+                            
+                            const nombre = res[asegurado]['nombre'];
+                            const id = res[asegurado]['asegurado_id'];
+                            const option = "<option value='"+id+"'>"+nombre+"</option>";
+                            $('#asegurado_id').append(option);
+                        }
+                    },
+                    error: function (result) {
+                        alert('Oh no aa :(' + result[0]);
+                    }
+                });
+            });
+        });
+    </script>
