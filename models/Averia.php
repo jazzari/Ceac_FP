@@ -4,11 +4,13 @@ use app\core\DbModel;
 use app\core\Application;
 
 class Averia extends DbModel{
-    public string $averia_id = '';
     public string $fecha = '';
+    public string $asunto = '';
     public string $aseguradora_id = '';
     public string $asegurado_id = '';
+    public string $usuario_id = '';
     public string $descripcion = '';
+    public string $foto = '';
     
 
     public function tableName(): string{
@@ -20,7 +22,7 @@ class Averia extends DbModel{
     }
 
     public function atributos(): array{
-        return ['averia_id', 'fecha', 'aseguradora_id', 'asegurado_id', 'descripcion'];
+        return ['asunto', 'fecha', 'aseguradora_id', 'asegurado_id', 'usuario_id', 'descripcion', 'foto'];
     }
 
     public function regAveria(){
@@ -36,7 +38,7 @@ class Averia extends DbModel{
                 </div>';
 
         } else {
-            // crea la cuenta en la DB
+            // crea la averia en la DB
             return $this->guardar();
         }
     }

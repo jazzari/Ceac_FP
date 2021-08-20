@@ -1,12 +1,5 @@
 <?php
-
-// echo '<pre>';
-// var_dump($aseguradora);
-// echo '</pre>';
-// exit;
-
 ?>
-
 
 <div class="container">
 
@@ -19,12 +12,19 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="card-title text-center">Registro de Averias</h5>
-                        <form action="" class="row g-3" data-form="save" method="GET">
+                        <form action="" class="row g-3" data-form="save" method="POST">
                             <div class="col">
-
+                                    <div>
+                                        <label class="form-label" for="asunto">Asunto</label>
+                                        <input class="form-control" type="text" id="asunto" name="asunto" required autofocus/>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                            </div>
+                            <div class="col">
                                 <label class="form-label" for="aseguradora">Aseguradora</label>
                                 <select class="form-select mb-3" id="aseguradora" name="aseguradora_id"
-                                    aria-label="Floating label select example" required autofocus>
+                                    aria-label="Floating label select example" required>
                                     <option selected>Seleccione Aseguradora</option>
                                     <?php foreach($listAseguradora as $aseguradora){ ?>
                                     <option value="<?php print_r($aseguradora['aseguradora_id']) ?>">
@@ -32,15 +32,18 @@
                                     <?php } ?>
 
                                 </select>
+                                <div class="valid-feedback">
+                                            Looks good!
+                                </div>
                                 <div class="col">
 
                                     <label class="form-label" for="asegurado_id">Asegurado</label>
                                     <select class="form-select mb-3" id="asegurado_id" name="asegurado_id"
                                         aria-label="Floating label select example">
                                         <option selected>Seleccione Asegurado</option>
-                                        
-
                                     </select>
+                                </div>
+                                <div class="col">
                                     <div>
                                         <label class="form-label" for="fecha">Fecha</label>
                                         <input class="form-control" type="date" id="fecha" name="fecha" required />
@@ -56,17 +59,17 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="fotos" class="form-label">Fotos</label>
-                                        <input class="form-control form-control-sm" type="file" id="fotos" name="fotos" multiple>
+                                        <label for="foto" class="form-label">Foto</label>
+                                        <input class="form-control form-control-sm" type="file" id="foto" name="foto" multiple>
                                     </div>
 
-
-                                    <div class="valid-feedback">Warning: Trying to access array offset on value of type
-                                        null
+                                    <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
-
+                                
+                                <input type="hidden" name="usuario_id" value="<?php echo $_SESSION['usuario'] ?>" />
+                              
                                 <button class="btn btn-success w-100">Registrar</button>
                         </form>
                     </div>
