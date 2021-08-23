@@ -6,13 +6,10 @@ use app\core\Request;
 use app\models\Asegurado;
 use app\models\Aseguradora;
 use app\models\Averia;
+use app\models\Foto;
 use app\core\middlewares\AuthMiddleware;
 
 class AveriaController extends Controller{
-
-    public function __construct(){
-        // $this->registroMiddleware(new AuthMiddleware(['panelAdmin']));
-    }
 
     public function regAveria(Request $request){
         $averia = new Averia();
@@ -23,9 +20,9 @@ class AveriaController extends Controller{
         
         if ($request->isPost()){
             $averia->cargarDatos($request->getContenido());
-        
            
             if ($averia ->regAveria()){
+                
                 echo "<script type=\"text/javascript\">
                 alert('Se ha registrado la Avería con éxito');
                 window.location.href='/panelAdmin';
