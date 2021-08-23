@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <div class="container">
@@ -16,23 +17,8 @@
                             <div class="col">
                                 <div>
                                     <label class="form-label" for="asunto">Asunto</label>
-                                    <input class="form-control" type="text" id="asunto" name="asunto" required
+                                    <input class="form-control mb-3" type="text" id="asunto" name="asunto" required
                                         autofocus />
-                                    <div class="valid-feedback">
-                                        Se ve bien!
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <label class="form-label" for="aseguradora">Aseguradora</label>
-                                    <select class="form-select mb-3" id="aseguradora" name="aseguradora_id"
-                                        aria-label="Floating label select example" required>
-                                        <option value="" selected>Seleccione Aseguradora</option>
-                                        <?php foreach($listAseguradora as $aseguradora){ ?>
-                                        <option value="<?php print_r($aseguradora['aseguradora_id']) ?>">
-                                            <?php print_r($aseguradora['nombre']) ?></option>
-                                        <?php } ?>
-
-                                    </select>
                                     <div class="valid-feedback">
                                         Se ve bien!
                                     </div>
@@ -43,11 +29,17 @@
                                     <select class="form-select mb-3" id="asegurado_id" name="asegurado_id"
                                         aria-label="Floating label select example" required>
                                         <option value="" selected>Seleccione Asegurado</option>
+                                        <?php foreach($listAsegurado as $asegurado){ ?>
+                                        <option value="<?php print_r($asegurado['asegurado_id']) ?>">
+                                            <?php print_r($asegurado['nombre']) ?></option>
+                                            
+                                        <?php } ?>
                                     </select>
                                     <div class="valid-feedback">
                                         Se ve bien!
                                     </div>
                                 </div>
+
                                 <div class="col">
                                     <div>
                                         <label class="form-label" for="fecha">Fecha</label>
@@ -75,6 +67,7 @@
                                 </div>
 
                                 <input type="hidden" name="usuario_id" value="<?php echo $_SESSION['usuario'] ?>" />
+                                <input type="hidden" id="aseguradora_id" name="aseguradora_id" ?>
 
                                 <button class="btn btn-success w-100">Registrar</button>
                         </form>
@@ -87,30 +80,24 @@
 
 </div>
 
-<!-- Script -->
 <script type='text/javascript'>
 $(document).ready(function() {
-    $('select[name="aseguradora_id"]').on('change', function() {
-        var aseguradora_id = $(this).val();
+    // busca el id de la aseguradora del asegurado
+    $('select[name="asegurado_id"]').on('change', function() {
+        const asegurado_id = $(this).val();
 
-        $('#asegurado_id').find('option').not(':first').remove();
-        var url = '/getAsegurados' + '(' + aseguradora_id + ')';
         $.ajax({
-            url: '/getAsegurados',
+            url: '/getAsegurado',
             type: 'GET',
             data: {
-                aseguradora: aseguradora_id
+                asegurado: asegurado_id
             },
             dataType: 'text',
             success: function(result) {
-
                 let res = JSON.parse(result);
                 for (const asegurado in res) {
-
-                    const nombre = res[asegurado]['nombre'];
-                    const id = res[asegurado]['asegurado_id'];
-                    const option = "<option value='" + id + "'>" + nombre + "</option>";
-                    $('#asegurado_id').append(option);
+                    const aseguradora = res[asegurado]['aseguradora_id'];
+                    $('#aseguradora_id').val(aseguradora).val();
                 }
             },
             error: function(result) {

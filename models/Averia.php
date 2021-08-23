@@ -26,7 +26,7 @@ class Averia extends DbModel{
     }
 
     public function regAveria(){
-        // comprueba que el email no exista en la DB
+        // comprueba que no exista una averia registrada con ese asegurado en la DB
         $consulta = Application::$app->db->pdo->prepare("SELECT * FROM averia WHERE aseguradora_id='$this->aseguradora_id' AND asegurado_id='$this->asegurado_id'");
   
         $consulta->execute();

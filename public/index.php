@@ -47,7 +47,7 @@ $app->router->get('/listarAseguradoras', [AseguradoraController::class, 'listarA
 $app->router->get('/regAsegurado', [AseguradoController::class, 'regAsegurado']);
 $app->router->post('/regAsegurado', [AseguradoController::class, 'regAsegurado']);
 $app->router->get('/listarAsegurados', [AseguradoController::class, 'listarAsegurados']);
-$app->router->get('/getAsegurados', [AseguradoController::class, 'getAsegurados']);
+$app->router->get('/getAsegurado', [AseguradoController::class, 'getAsegurado']);
 
 $app->router->get('/regAveria', [AveriaController::class, 'regAveria']);
 $app->router->post('/regAveria', [AveriaController::class, 'regAveria']);

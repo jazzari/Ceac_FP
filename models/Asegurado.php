@@ -23,7 +23,7 @@ class Asegurado extends DbModel{
     }
 
     public function regAsegurado(){
-        // comprueba que el email no exista en la DB
+        // comprueba que el asegurado no exista en la DB
         $consulta = Application::$app->db->pdo->prepare("SELECT * FROM asegurado WHERE nombre='$this->nombre'");
   
         $consulta->execute();
@@ -35,7 +35,7 @@ class Asegurado extends DbModel{
                 </div>';
 
         } else {
-            // crea la cuenta en la DB
+            // crea al asegurado en la DB
             return $this->guardar();
         }
     }
@@ -51,6 +51,14 @@ class Asegurado extends DbModel{
         $consulta->execute();
         $lista = $consulta->fetchAll();
         
+        return $lista;
+    }
+
+    public function getAseg($asegurado){
+        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM asegurado WHERE asegurado_id IN ($asegurado)");
+        $consulta->execute();
+        $lista = $consulta->fetchAll();
+     
         return $lista;
     }
 

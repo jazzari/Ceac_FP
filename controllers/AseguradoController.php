@@ -48,12 +48,21 @@ class AseguradoController extends Controller{
     public function getAsegurados(Request $request){
         header('Content-Type: application/json');
         $consulta = $request->getContenido();
-        $aseguradora = $consulta['aseguradora'];
-        
+        $aseguradora = $consulta['aseguradora']; 
         $asegurado = new Asegurado();
         $asegurados = $asegurado->getAsegurados($aseguradora);
 
         return json_encode($asegurados, JSON_PRETTY_PRINT);
+    }
+
+    public function getAsegurado(Request $request){
+        header('Content-Type: application/json');
+        $consulta = $request->getContenido();     
+        $asegurado = $consulta['asegurado'];
+
+        $aseguradoObj = new Asegurado();
+        $aseg = $aseguradoObj->getAseg($asegurado);
+        return json_encode($aseg, JSON_PRETTY_PRINT);
     }
 
 }

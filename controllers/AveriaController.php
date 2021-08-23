@@ -18,7 +18,7 @@ class AveriaController extends Controller{
         $averia = new Averia();
         $aseguradora = new Aseguradora();
         $asegurado = new Asegurado();
-        $listAseguradora = (array)$aseguradora->findAll('aseguradora');
+        // $listAseguradora = (array)$aseguradora->findAll('aseguradora');
         $listAsegurado = (array)$asegurado->findAll('asegurado');
         
         if ($request->isPost()){
@@ -36,7 +36,7 @@ class AveriaController extends Controller{
                 'model' => $averia
             ]);
         }
-        return $this->render('regAveria', compact('listAseguradora', 'listAsegurado'));
+        return $this->render('regAveria', compact('listAsegurado'));
     }
 
     public function listarAverias(){

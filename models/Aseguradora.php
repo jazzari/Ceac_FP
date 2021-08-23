@@ -35,7 +35,7 @@ class Aseguradora extends DbModel{
                 </div>';
 
         } else {
-            // crea la cuenta en la DB
+            // crea la aseguradora en la DB
             return $this->guardar();
         }
     }
