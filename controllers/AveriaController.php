@@ -40,19 +40,24 @@ class AveriaController extends Controller{
     }
 
     public function listarAverias(){
+        $aseguradoras = [];
+        $asegurados = [];
         $averia = new Averia();
-        $asegurado = new Asegurado();
-        $aseguradora = new Aseguradora();
+        $aseguradoObj = new Asegurado();
+        $aseguradoraObj = new Aseguradora();
         $listAveria = (array)$averia->findAll('averia');
-        $listAseguradora = (array)$aseguradora->findAll('aseguradora');
-        // $listAseg = $asegurado->getAsegurados(12);
-//         echo '<pre>';
-// var_dump($listAseg);
-// echo '</pre>';
-// exit;
-        // $listaAsegurados = $asegurado->listarAsegurados();
+        foreach ($listAveria as $averia){
+            $aseguradora = $averia['aseguradora_id'];
+            $asegurado = $averia['asegurado_id'];
+            array_push($aseguradoras, $aseguradora);
+            array_push($asegurados, $asegurado);
+        }
+        $listAseg = implode(',', $aseguradoras);
+        $listAsegur = implode(',', $asegurados);
+        $listAseguradora = $aseguradoraObj->getAseguradoras($listAseg);
+        $listAsegurados = $aseguradoObj->getAsegurados($listAsegur);
         
-        return $this->render('listarAveria', compact('listAseguradora', 'listAveria'));
+        return $this->render('listarAverias', compact('listAseguradora', 'listAveria', 'listAsegurados'));
     }
 
 }

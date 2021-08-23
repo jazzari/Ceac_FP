@@ -45,5 +45,14 @@ class Aseguradora extends DbModel{
         return $lista;
     }
 
+    public function getAseguradoras($aseguradoras){
+        $aseg = "'" . str_replace(",", "','", $aseguradoras) . "'";
+        $consulta = Application::$app->db->pdo->prepare("SELECT * FROM aseguradora WHERE aseguradora_id IN ($aseg)");
+        $consulta->execute();
+        $lista = $consulta->fetchAll();
+
+        return $lista;
+    }
+
 }
 ?>
