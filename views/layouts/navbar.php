@@ -16,9 +16,7 @@ use app\core\Application;
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../vistas/servicios">Servicios</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="/contacto">Contacto</a>
                     </ul>

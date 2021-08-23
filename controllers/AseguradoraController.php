@@ -4,13 +4,8 @@ use app\core\Controller;
 use app\core\Application;
 use app\core\Request;
 use app\models\Aseguradora;
-use app\core\middlewares\AuthMiddleware;
 
 class AseguradoraController extends Controller{
-
-    public function __construct(){
-        // $this->registroMiddleware(new AuthMiddleware(['panelAdmin']));
-    }
 
     public function regAseguradora(Request $request){
         $aseguradora = new Aseguradora();

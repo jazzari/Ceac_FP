@@ -1,8 +1,4 @@
 <?php
-// echo '<pre>';
-// var_dump($listAseg);
-// echo '</pre>';
-// exit;
 ?>
 
 <div class="container">
@@ -21,14 +17,14 @@
                                 <label class="form-label" for="nombre">Nombre</label>
                                 <input class="form-control" type="text" id="nombre" name="nombre" required autofocus />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             
                                 <label class="form-label mt-3" for="direccion">Dirección</label>
                                 <input class="form-control" type="text" id="direccion" name="direccion" required
                                     autofocus />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             </div>
 
@@ -36,7 +32,7 @@
                                 <label class="form-label" for="telefono">Teléfono</label>
                                 <input class="form-control" type="number" id="telefono" name="telefono" required />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             </div>
                             
@@ -44,7 +40,7 @@
                                 <label class="form-label" for="domicilio">Domicilio de Reparación</label>
                                 <input class="form-control" type="text" id="domicilio" name="domicilio" required />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             </div>
                             <div class="col">
@@ -60,7 +56,7 @@
                                 </select>
                                 
                                 <div class="valid-feedback">Warning:  Trying to access array offset on value of type null
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             </div>
                             

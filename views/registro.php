@@ -17,35 +17,35 @@
                           name="user" required autofocus
                         />
                         <div class="valid-feedback">
-                          Looks good!
+                          Se ve bien!
                         </div>
                     </div>
                     <div class="col-md-6">
                                 <label class="form-label" for="nombre">Nombre</label>
                                 <input class="form-control" type="text" id="nombre" name="nombre" required />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="apellidos">Apellidos</label>
                                 <input class="form-control" type="text" id="apellidos" name="apellidos" required />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                     </div>
                     <div class="col-md-6">
                                 <label class="form-label" for="correo">Correo</label>
                                 <input class="form-control" type="email" id="correo" name="correo" required />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="pass">Contraseña</label>
                                 <input class="form-control" type="password" id="pass" name="pass" required />
                                 <div class="valid-feedback">
-                                    Looks good!
+                                Se ve bien!
                                 </div>
                     </div>
                     

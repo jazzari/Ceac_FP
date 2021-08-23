@@ -6,16 +6,13 @@ use app\models\Usuario;
 use app\models\Aseguradora;
 use app\models\Averia;
 
-
 abstract class DbModel extends Model{
     public string $modelo = '';
     public Usuario $usuario;
     public Aseguradora $aseguradora;
     public Averia $averia;
-    // abstract public function tableName(): string;
 
     abstract public function atributos(): array;
-
     abstract public function clavePrimaria(): string;
 
     public function guardar(){

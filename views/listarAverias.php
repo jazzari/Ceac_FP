@@ -1,8 +1,5 @@
 <?php
-        // echo '<pre>';
-        // var_dump($listAsegurados);
-        // echo '</pre>';
-        // exit;
+
 ?>
 
 <div class="container justify-content-center align-items-center mt-5">

@@ -35,12 +35,6 @@
                         <a href="/listarAverias" class="btn btn-outline-primary">Listar Averías</a>
                     </div>
                     
-                    <div class="d-grid gap-3 d-md-flex justify-content-md-end">
-                        
-                        <a href="#" class="btn btn-secondary btn-sm">Editar Cuenta</a>
-                        <a href="#" class="btn btn-danger btn-sm">Borrar Cuenta</a>
-                    </div>
-                    
                 </div>
             </div>
         </div>

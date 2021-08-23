@@ -6,8 +6,6 @@ use app\core\Request;
 use app\models\Asegurado;
 use app\models\Aseguradora;
 use app\models\Averia;
-use app\models\Foto;
-use app\core\middlewares\AuthMiddleware;
 
 class AveriaController extends Controller{
 
@@ -15,7 +13,7 @@ class AveriaController extends Controller{
         $averia = new Averia();
         $aseguradora = new Aseguradora();
         $asegurado = new Asegurado();
-        // $listAseguradora = (array)$aseguradora->findAll('aseguradora');
+        
         $listAsegurado = (array)$asegurado->findAll('asegurado');
         
         if ($request->isPost()){
